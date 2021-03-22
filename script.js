@@ -23,9 +23,9 @@ function obtenerResultado (resultado) {
 }
 
 let stringTodasLasCartas = '';
-todasLasCartas.forEach(carta => {
+todasLasCartas.forEach((carta, index) => {
     stringTodasLasCartas += 
-    `<div class="col-md-3 carta">
+    `<div class="col-md-3 carta" id="carta` + index + `">
         <div class="row">
             <div class="imagen-container">
                 <img class="imagen" src="images/` + carta.imagen + `" alt="">
@@ -59,8 +59,9 @@ todasLasCartas.forEach(carta => {
             </div>
 
             <div class="botones margen-arriba">
-            <button type="button" class="btn btn-success">Agregar</button> 
-            <button type="button" class="btn btn-outline-secondary">Quitar</button> 
+                <button type="button" class="btn btn-success btn-agregar">Agregar</button> 
+                <button type="button" class="btn btn-outline-secondary btn-quitar">Quitar</button>
+                <input type="hidden" class="index" value="` + index + `">
             </div>
         </div>
     </div>`
@@ -71,12 +72,17 @@ $('#faltan').html(
     stringTodasLasCartas
 );
 
-// console.log( "ready!" );
-// console.log($('.carta input.nivel').val());
+
 $('.carta input.nivel').on('keyup change', function() {
     console.log(parseInt($(this).val()));
     console.log($(this).closest('.row').find('.nombre h2').html());
     $(this).closest('.datos').find('.valor-empatia').html('camila');
+});
+
+$('.carta .btn-agregar').click(function() {
+    console.log(todasLasCartas[$(this).siblings('.index').val()]);
+    estado.cartasElegidas.push(todasLasCartas[$(this).siblings('.index').val()]);
+    console.log(estado.cartasElegidas);
 });
 
 //---- OBTENCION DE DATOS
@@ -172,6 +178,7 @@ $('#miembro').change(function() {
     estado.miembro = $(this).val();
     console.log(estado);
 });
+
 //STAT
 $('#stat').change(function() {
     console.log("STAT: " +$(this).val());
@@ -212,5 +219,18 @@ $('#sabiduria').change(function() {
     console.log(estado);
 });
 
+$('#boton-simular').click(function() {
+    bonusDiario();
+    statsAgencia();
+    //obtenerResultado();
+});
+
+function bonusDiario() {
+
+};
+
+function statsAgencia() {
+
+};
 
 //estado.valor = 
