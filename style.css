@@ -1,0 +1,108 @@
+/* DATOS */
+
+h1,
+h2 {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.simular {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.margen-arriba {
+  margin-top: 20px;
+}
+
+.margen-costados {
+  margin-left: 20%;
+  margin-right: 10%;
+}
+
+/* RESULTADOS */
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "imagen titulo"
+    "imagen contenido"
+    "imagen cartas";
+}
+
+.titulo-resultado {
+  grid-area: titulo;
+  margin-top: 10px;
+}
+
+.izquierda {
+  grid-area: imagen;
+}
+
+.contenido-resultado {
+  grid-area: contenido;
+  text-align: center;
+  margin-left: 10%;
+}
+
+.cartas-resultado {
+  grid-area: cartas;
+}
+
+
+/* CARTAS */
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "logo-empatia valor-empatia"
+    "logo-pasion valor-pasion"
+    "logo-stamina valor-stamina"
+    "logo-sabiduria valor-sabiduria"
+    "nivel-carta nivel-carta";
+}
+
+.logo-empatia {
+  grid-area: logo-empatia;
+}
+
+.logo-pasion {
+  grid-area: logo-pasion;
+}
+
+.logo-stamina {
+  grid-area: logo-stamina;
+}
+
+.logo-sabiduria {
+  grid-area: logo-sabiduria;
+}
+
+.valor-empatia {
+  grid-area: valor-empatia;
+}
+
+.valor-pasion {
+  grid-area: valor-pasion;
+}
+
+.valor-stamina {
+  grid-area: valor-stamina;
+}
+
+.valor-sabiduria {
+  grid-area: valor-sabiduria;
+}
+
+.nivel-carta {
+  grid-area: nivel-carta;
+}
+
+.carta .imagen-container{
+  overflow: hidden;
+}

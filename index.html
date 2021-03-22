@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Simulador BTS World</title>
+</head>
+<body>
+
+    <h1 class="margen-arriba">Bienvenidos al simulador de BTS World!</h1>
+
+    <div class="col-md-12 margen-arriba">
+        <h2>Qué nivel querés pasar?</h2>
+    </div>
+    <div class="row margen-arriba margen-costados">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <select id="historia" class="form-control" required="">
+                <option value="">Seleccione Historia</option>
+                <option value="principal">Historia principal</option>
+                <option value="anotherRM">Another Story - RM</option>
+                <option value="anotherJin">Another Story - Jin</option>
+                <option value="anotherSuga">Another Story - Suga</option>
+                <option value="anotherjhope">Another Story - j-hope</option>
+                <option value="anotherJimin">Another Story - Jimin</option>
+                <option value="anotherV">Another Story - V</option>
+                <option value="anotherJungkook">Another Story - Jungkook</option>
+                </select>
+            </div>
+
+            <div class="col-md-6" id="select-nivel">
+                <select id="nivel" class="form-control" required="">
+                    <option value="">Seleccione una Historia Primero</option>
+                </select>
+            </div>   
+        </div>    
+    </div>
+    <!-- los niveles cambian para las otras historias, el menu desplegable deberia ser distinto al seleccionarlas-->
+
+    
+    <div class="margen-arriba" id="bonus">
+
+        <h2>Cuál es tu bonus diario?</h2>
+
+        <div class="row margen-costados">
+            <div class="col-md-4">
+                <label for="miembro">Miembro:</label>
+                <select name="miembro" id="miembro" class="form-control" required>
+                    <option value="">Seleccione...</option>
+                    <option value="todos">Todos</option>
+                    <option value="RM">RM</option>
+                    <option value="Jin">Jin</option>
+                    <option value="Suga">Suga</option>
+                    <option value="jhope">j-hope</option>
+                    <option value="Jimin">Jimin</option>
+                    <option value="V">V</option>
+                    <option value="Jungkook">Jungkook</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">     
+                <label for="stats">Stat:</label>
+                <select name="stats" id="stat" class="form-control" required>  <!-- En estas el valor deberia ser lo que ponga el usuario -->
+                    <option value="">Seleccione...</option>
+                    <option value="todas">Todas</option>
+                    <option value="empatia">Empatía</option>
+                    <option value="pasion">Pasión</option>
+                    <option value="stamina">Stamina</option>
+                    <option value="sabiduria">Sabiduría</option>
+                </select> 
+            </div> 
+                
+            <div class="col-md-4">    
+                <label for="valor">Valor:</label>
+                <select name="valor" id="valor" class="form-control" required>
+                    <option value="">Seleccione...</option>
+                    <option value="1.03">3%</option>
+                    <option value="1.05">5%</option>
+                    <option value="1.1">10%</option>
+                    <option value="100">+100</option>
+                    <option value="200">+200</option>
+                    <option value="400">+400</option>
+                </select>
+            </div>       
+        </div>
+        
+
+    </div>
+
+
+     
+    
+    <div class="margen-arriba" id="stats">
+        <h2>Stats grupales - Agencia</h2>
+
+        <div class="stats margen-costados">
+        <label for="pasion">Pasión:</label> <!-- Acá lo mismo -->
+        <input type="number" id="pasion">
+
+        <label for="empatia">Empatía:</label>
+        <input type="number" id="empatia">
+
+        <label for="stamina">Stamina:</label>
+        <input type="number" id="stamina">
+    
+        <label for="sabiduria">Sabiduría:</label>
+        <input type="number" id="sabiduria">
+        </div>
+    </div>
+
+    <div class="">
+    <button onclick="obtenerResultado()" type="button" class="btn btn-success simular">Simular!</button>
+    </div>
+
+    
+    
+    <div id="resultado">
+
+    </div>
+
+    <!-- Acá irian las cartas que voy agregando como en un carrito-->
+
+
+
+
+  
+
+
+
+<div class="margen-arriba" id="coleccion">
+    <h2>Mi Colección</h2>
+    <div id="tengo">
+
+    </div>
+
+    <div class="row" id="faltan">
+
+    </div> <!--fin faltan-->
+</div> <!--fin coleccion-->
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
