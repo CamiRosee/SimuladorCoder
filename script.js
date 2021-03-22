@@ -76,7 +76,10 @@ $('#faltan').html(
 $('.carta input.nivel').on('keyup change', function() {
     console.log(parseInt($(this).val()));
     console.log($(this).closest('.row').find('.nombre h2').html());
-    $(this).closest('.datos').find('.valor-empatia').html('camila');
+    $(this).closest('.datos').find('.valor-empatia').html('subeEmpatia');
+    $(this).closest('.datos').find('.valor-pasion').html('subePasion');
+    $(this).closest('.datos').find('.valor-stamina').html('subeStamina');
+    $(this).closest('.datos').find('.valor-sabiduria').html('subeSabiduria');
 });
 
 $('.carta .btn-agregar').click(function() {
